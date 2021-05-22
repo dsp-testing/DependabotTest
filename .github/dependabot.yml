@@ -1,0 +1,14 @@
+version: 2
+registries:
+  telerik:
+    type: nuget-feed
+    url: https://nuget.telerik.com/nuget
+    username: ${{ secrets.USERNAME }}
+    password: ${{ secrets.PASSWORD }}
+updates:
+  - package-ecosystem: nuget
+    directory: "/DependabotTest"
+    registries: "*"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 40
